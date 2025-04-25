@@ -379,15 +379,13 @@ const taskNameInput = document.getElementById('task-name');
                 console.log("This browser does not support notifications.");
             } else if (Notification.permission === "granted") {
                 new Notification("番茄鐘", {
-                    body: body,
-                    icon: '/icon.png'
+                    body: body
                 });
             } else if (Notification.permission !== 'denied') {
                 Notification.requestPermission().then(function (permission) {
                     if (permission === "granted") {
                         new Notification("番茄鐘", {
-                            body: body,
-                            icon: '/icon.png'
+                            body: body
                         });
                     }
                 });
